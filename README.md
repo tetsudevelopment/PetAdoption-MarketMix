@@ -3,7 +3,7 @@ Proyecto semillero realizando una SinglePage Mostrando los participantes e infor
 > https://github.com/tetsudevelopment/PetAdoption-MarketMix
 
 # Pagina lanzada: 
-> https://tetsudevelopment.github.io/AppliancesStore-MarketMix/
+> https://tetsudevelopment.github.io/PetAdoption-MarketMix/
 # Participantes:
 ```
 Brayan Estaban Marin Calderon
