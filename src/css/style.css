@@ -19,6 +19,17 @@ body{
   text-align: center;
   font-family: 'Merriweather', serif
 }
+/* modals */
+#mascota-modal img{
+  width: 320px;
+}
+#modal-body-perro{
+  background-color: rgb(44, 139, 87) !important;
+}
+#modal-perro{
+  background-color: rgb(204, 217, 226) !important;
+}
+/* /modals */
 /* #menu img{
   width: 300px;
   height: 200px;

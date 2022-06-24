@@ -39,7 +39,7 @@
         <div class="row justify-content-center text-center mt-4">
             <div class="col-12 mb-4 offset-2">
                 <div class="card col-10">
-                    <div class="card-body btn">
+                    <div class="card-body btn" data-bs-toggle="modal" data-bs-target="#mascota">
                         <img src="../assets/Images/perro1.jpg" class="card-img-top " alt="foto mascota">
                     </div>
                     <div class="card-body">
@@ -101,66 +101,40 @@
     </section>
     <!-- /cards -->
     <!-- modal_adopcion -->
-    <section id="hot-dog-modal">
-        <div class="container" v-for="item in dataFood[0].hotDog">
-            <!-- Hot Dog Americano -->
-            <div class="modal fade" :id="item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <section id="mascota-modal">
+        <div class="container">
+            <div class="modal fade" id="mascota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content" id="modal-content-p">
+                    <div class="modal-content" id="modal-perro">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">{{item.name}}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Tony</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body text-center" id="modal-body-p">
+                        <div class="modal-body text-center" id="modal-body-perro">
                             <div class="modal-body-image">
-                                <img :src="item.img" :alt="item.name">
+                                <img src="../assets/Images/perro1.jpg" alt="perro">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 id="ingredients">Ingredientes:</h5>
+                                        <h5 id="ingredients">Criollo:</h5>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p>{{item.description}}</p>
+                                            <p>Perrito criollo con tan solo dos años de edad, muy cariñoso.</p>
                                         </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h4>${{item.price}}</h4>
-                                            </div>
-                                        </div>
-                                        <!-- Ingresar cantidad -->
-                                        <div class="container-fluid mb-2">
-                                            <div class="row">
-                                                <div class="col text-center">
-                                                    <p class="text-center fw-bold">Cantidad</p>
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <button class="btn btn-outline " type="button"
-                                                        id="button-image"><img src="assets/images/menos.png" alt=""
-                                                            @click="cant(item,0)"></button>
-                                                    <input type="number" class="form-control rounded text-center"
-                                                        placeholder="" aria-label="Example text with button addon"
-                                                        aria-describedby="button-addon1" v-model="item.cant">
-                                                    <button class="btn btn-outline " type="button"
-                                                        id="button-image"><img src="assets/images/mas.png" alt=""
-                                                            @click="cant(item,1)"></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /Ingresar cantidad -->
-                                        <!-- Botón Agregar -->
+                                        <!-- Botón Adoptar -->
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col text-center mt-3">
-                                                    <button type="button" class="btn btn-outline-light btn-lg"
-                                                        @click="agg(item)"> Agregar</button>
+                                                    <button type="button" class="btn btn-success">
+                                                        Adoptar</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- /Boton Agregar -->
+                                        <!-- /Boton adoptar -->
                                     </div>
                                 </div>
                             </div>
