@@ -24,6 +24,7 @@ let app = new Vue({
         status: 0,
       },
     ],
+    userLogin:{},
     dataPets: [
       {
         id: 001,
@@ -58,9 +59,12 @@ let app = new Vue({
         img: "../assets/Animals/Niña.jpg",
       },
     ],
+    sessionStorageUser:
+      {
+        userId: "",
+        userPin:'',
+      },
     category: "",
-    userId: "",
-    userPin: "",
   },
   created() {
     // if (localStorage.getItem("products") !== null) {
@@ -75,21 +79,26 @@ let app = new Vue({
   computed: {},
   methods: {
     login() {
-      let user = this.dataUser.find((element) => element.userId == this.userId);
+      let user = this.dataUser.find((element) => element.userId == this.sessionStorageUser.userId);
       let index = this.dataUser.indexOf(user);
-      if (this.userId == '' || this.userPin == '') {
-        alert('Porfavor Llene los campos correspondientes')
-      }else if (index == -1) {
+      if (this.sessionStorageUser.userId == "" || this.sessionStorageUser.userPin == "") {
+        alert("Porfavor Llene los campos correspondientes");
+      } else if (index == -1) {
         console.log("El usuario no existe en nuestra base de datos");
-      } else if (user.userPin == this.userPin) {
-        this.category = this.dataUser[index].category;
-        this.dataUser[index].status = 1;
+      } else if (user.userPin == this.sessionStorageUser.userPin) {
+        this.userLogin.push({
+          userId: this.sessionStorageUser.userId,
+          userPin: this.sessionStorageUser.userPin,
+          name: user.name,
+          category: user.category,
+          status: 1,
+        });
+        // this.category = this.dataUser[index].category;
+        // this.dataUser[index].status = 1;
       } else {
         console.log("Pin Incorrecto");
       }
     },
-    logOut(){
-      
-    },
-  }, 
+    logOut() {},
+  },
 });

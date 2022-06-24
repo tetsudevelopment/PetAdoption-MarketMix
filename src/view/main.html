@@ -21,11 +21,11 @@
   <div id="app">
     <div class="container row">
       <div class="form-floating mb-3 col-6">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="userId">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="sessionStorageUser.userId">
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating col-6">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="userPin">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="sessionStorageUser.userPin">
         <label for="floatingPassword">Password</label>
       </div>
       <div class="col-6 text-center">
@@ -34,13 +34,13 @@
     </div>
 
     <!-- Usuarios normales -->
-    <div v-if="category==='User'">
+    <div v-if="userLogin.category==='User'">
       <h1>Este es el usuario</h1>
       <button type="button" class="btn btn-danger" @click="logOut ">Salir</button>
     </div>
     <!-- /Usuarios normales -->
     <!-- Admin -->
-    <div v-else-if="category=='Admin'">
+    <div v-else-if="userLogin.category=='Admin'">
       <h1>Este es el admin</h1>
       <button type="button" class="btn btn-danger" @click="logOut ">Salir</button>
     </div>
