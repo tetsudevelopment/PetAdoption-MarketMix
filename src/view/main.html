@@ -36,11 +36,13 @@
     <!-- Usuarios normales -->
     <div v-if="category==='User'">
       <h1>Este es el usuario</h1>
+      <button type="button" class="btn btn-danger" @click="logOut ">Salir</button>
     </div>
     <!-- /Usuarios normales -->
     <!-- Admin -->
     <div v-else-if="category=='Admin'">
       <h1>Este es el admin</h1>
+      <button type="button" class="btn btn-danger" @click="logOut ">Salir</button>
     </div>
     <div v-else>
       <h1>Porfavor Inicie sesion</h1>

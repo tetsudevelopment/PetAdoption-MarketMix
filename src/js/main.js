@@ -25,27 +25,42 @@ let app = new Vue({
       },
     ],
     dataPets: [
-      { id: 001, name: "Sacha", race: "Bulldog", age: 2, status: "Adoption" },
+      {
+        id: 001,
+        name: "Sacha",
+        race: "Bulldog",
+        age: "1 año",
+        status: "Adoption",
+        img: "../assets/Animals/Sacha.jpg",
+      },
       {
         id: 002,
         name: "Rex",
         race: "Labrador retriever",
-        age: 3,
+        age: "3 meses",
         status: "Adoption",
+        img: "../assets/Animals/Rex.jpg",
       },
       {
         id: 003,
         name: "Gema",
         race: "Pastor alemán",
-        age: 2,
+        age: "2 años",
         status: "Adoption",
+        img: "../assets/Animals/Gema.jpg",
       },
-      { id: 004, name: "Niña", race: "Bulldog", age: 2, status: "Adoption" },
+      {
+        id: 004,
+        name: "Niña",
+        race: "Akita Inu",
+        age: "2 años",
+        status: "Adoption",
+        img: "../assets/Animals/Niña.jpg",
+      },
     ],
-    category: '',
-    userId: '',
-    userPin:'',
-
+    category: "",
+    userId: "",
+    userPin: "",
   },
   created() {
     // if (localStorage.getItem("products") !== null) {
@@ -57,21 +72,24 @@ let app = new Vue({
   mounted() {
     // this.$refs.name.focus();
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     login() {
-      let user = this.dataUser.find(element => element.userId==this.userId)
-      let index = this.dataUser.indexOf(user)
-      if (index == -1) {
-        console.log('El usuario no existe en nuestra base de datos');
+      let user = this.dataUser.find((element) => element.userId == this.userId);
+      let index = this.dataUser.indexOf(user);
+      if (this.userId == '' || this.userPin == '') {
+        alert('Porfavor Llene los campos correspondientes')
+      }else if (index == -1) {
+        console.log("El usuario no existe en nuestra base de datos");
       } else if (user.userPin == this.userPin) {
         this.category = this.dataUser[index].category;
         this.dataUser[index].status = 1;
       } else {
-        console.log('Pin Incorrecto');
+        console.log("Pin Incorrecto");
       }
     },
-  },
+    logOut(){
+      
+    },
+  }, 
 });
