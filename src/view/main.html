@@ -19,7 +19,33 @@
 
 <body>
   <div id="app">
+    <div class="container row">
+      <div class="form-floating mb-3 col-6">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="userId">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating col-6">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="userPin">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="col-6 text-center">
+        <button type="button" class="btn btn-primary" @click="login">Login</button>
+      </div>
+    </div>
 
+    <!-- Usuarios normales -->
+    <div v-if="category==='User'">
+      <h1>Este es el usuario</h1>
+    </div>
+    <!-- /Usuarios normales -->
+    <!-- Admin -->
+    <div v-else-if="category=='Admin'">
+      <h1>Este es el admin</h1>
+    </div>
+    <div v-else>
+      <h1>Porfavor Inicie sesion</h1>
+    </div>
+    <!-- /Admin -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
