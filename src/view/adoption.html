@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="assets/images/LogoPrimary.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Tienda de adopcion</title>
+</head>
+<!-- header -->
+
+<body>
+    <div id="app">
+        <nav id="header" class="navbar navbar-expand-lg bg-light mb-2 ">
+            <div class="container-fluid">
+                <a id="letra" class="navbar-brand" href="#">Pet Adoption</a>
+                <span class="badge text-bg-danger">Salir</span>
+            </div>
+    </div>
+    </nav>
+    </div>
+    <!-- /header -->
+    <!-- cards -->
+    <section id="menu">
+        <div class="row justify-content-center text-center mt-4">
+            <div class="col-12 mb-4 offset-2">
+                <div class="card col-10">
+                    <div class="card-body btn">
+                        <img src="../assets/Images/perro1.jpg" class="card-img-top " alt="foto mascota">
+                    </div>
+                    <div class="card-body">
+                        <div class="badges">
+                        </div>
+                        <h5 class="card-title ">Chester</h5>
+                        <div class="d-grid gap-2 mt-2">
+                            <button class="btn btn-success" type="button">Adoptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4 text-center offset-2 ">
+                <div class="card col-10">
+                    <div class="card-body btn">
+                        <img src="../assets/Images/perro2.webp" class="card-img-top " alt="foto mascota">
+                    </div>
+                    <div class="card-body">
+                        <div class="badges ">
+                        </div>
+                        <h5 class="card-title">Tony</h5>
+                        <div class="d-grid gap-2 mt-2">
+                            <button class="btn btn-success" type="button">Adoptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4 text-center offset-2 ">
+                <div class="card col-10">
+                    <div class="card-body btn">
+                        <img src="../assets/Images/gato1.jpg" class="card-img-top " alt="foto mascota">
+                    </div>
+                    <div class="card-body">
+                        <div class="badges ">
+                        </div>
+                        <h5 class="card-title">Abelardo</h5>
+                        <div class="d-grid gap-2 mt-2">
+                            <button class="btn btn-success" type="button">Adoptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4 text-center offset-2 ">
+                <div class="card col-10">
+                    <div class="card-body btn">
+                        <img src="../assets/Images/gato2.webp" class="card-img-top " alt="foto mascota">
+                    </div>
+                    <div class="card-body">
+                        <div class="badges ">
+                        </div>
+                        <h5 class="card-title">Zacho</h5>
+                        <div class="d-grid gap-2 mt-2">
+                            <button class="btn btn-success" type="button">Adoptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /cards -->
+    <!-- modal_adopcion -->
+    <section id="hot-dog-modal">
+        <div class="container" v-for="item in dataFood[0].hotDog">
+            <!-- Hot Dog Americano -->
+            <div class="modal fade" :id="item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="modal-content-p">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{item.name}}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center" id="modal-body-p">
+                            <div class="modal-body-image">
+                                <img :src="item.img" :alt="item.name">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 id="ingredients">Ingredientes:</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>{{item.description}}</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4>${{item.price}}</h4>
+                                            </div>
+                                        </div>
+                                        <!-- Ingresar cantidad -->
+                                        <div class="container-fluid mb-2">
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <p class="text-center fw-bold">Cantidad</p>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <button class="btn btn-outline " type="button"
+                                                        id="button-image"><img src="assets/images/menos.png" alt=""
+                                                            @click="cant(item,0)"></button>
+                                                    <input type="number" class="form-control rounded text-center"
+                                                        placeholder="" aria-label="Example text with button addon"
+                                                        aria-describedby="button-addon1" v-model="item.cant">
+                                                    <button class="btn btn-outline " type="button"
+                                                        id="button-image"><img src="assets/images/mas.png" alt=""
+                                                            @click="cant(item,1)"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Ingresar cantidad -->
+                                        <!-- Botón Agregar -->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col text-center mt-3">
+                                                    <button type="button" class="btn btn-outline-light btn-lg"
+                                                        @click="agg(item)"> Agregar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Boton Agregar -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- modal_adopcion -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

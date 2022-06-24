@@ -1,9 +1,26 @@
-:root {
-  --textColor: #FFFFFF;
-  --primary: #39a2f8;
-  --secundary: #2e88d2;
+*{
+  font-family: 'Merriweather', serif;
 }
-
-* {
-  font-family: 'Oswald', sans-serif;
+#header {
+  background-color: rgb(44, 139, 87) !important;
+  color: #FFFFFF;
 }
+body{
+  background-color: rgb(204, 217, 226);
+  
+}
+#login{
+  background-color: rgb(44, 139, 87);
+  margin: auto;
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  font-family: 'Merriweather', serif
+}
+/* #menu img{
+  width: 300px;
+  height: 200px;
+}
+ */
