@@ -29,9 +29,18 @@ body{
 #modal-perro{
   background-color: rgb(204, 217, 226) !important;
 }
-/* /modals */
-/* #menu img{
-  width: 300px;
-  height: 200px;
+#adoptado{
+  filter: grayscale(80%);
 }
- */
+/* /modals */
+#formulario{
+  background-color: rgb(44, 139, 87);
+  margin: auto;
+  border-radius: 10px;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  font-family: 'Merriweather', serif
+}
+
