@@ -59,46 +59,57 @@ let app = new Vue({
         img: "../assets/Animals/Niña.jpg",
       },
     ],
-    sessionStorageUser:
-      {
-        userId: "",
-        userPin:'',
-      },
+    sessionStorageUser: {
+      userId: "",
+      userPin: "",
+    },
     category: "",
   },
   created() {
-    // if (localStorage.getItem("products") !== null) {
-    //   this.newArrayProds = JSON.parse(localStorage.getItem("products"));
-    // } else {
-    //   this.listData();
-    // }
+    if (sessionStorage.getItem("sessionStorageUser") !== null) {
+      this.userLogin = JSON.parse(sessionStorage.getItem("sessionStorageUser"));
+    } else {
+      this.userLogin = {};
+    }
   },
   mounted() {
-    // this.$refs.name.focus();
+    this.$refs.userId.focus();
   },
   computed: {},
   methods: {
     login() {
-      let user = this.dataUser.find((element) => element.userId == this.sessionStorageUser.userId);
+      let user = this.dataUser.find(
+        (element) => element.userId == this.sessionStorageUser.userId
+      );
       let index = this.dataUser.indexOf(user);
-      if (this.sessionStorageUser.userId == "" || this.sessionStorageUser.userPin == "") {
+      if (
+        this.sessionStorageUser.userId == "" ||
+        this.sessionStorageUser.userPin == ""
+      ) {
         alert("Porfavor Llene los campos correspondientes");
       } else if (index == -1) {
         console.log("El usuario no existe en nuestra base de datos");
       } else if (user.userPin == this.sessionStorageUser.userPin) {
-        this.userLogin.push({
-          userId: this.sessionStorageUser.userId,
-          userPin: this.sessionStorageUser.userPin,
-          name: user.name,
-          category: user.category,
-          status: 1,
-        });
-        // this.category = this.dataUser[index].category;
-        // this.dataUser[index].status = 1;
+        this.userLogin={
+            userId: this.sessionStorageUser.userId,
+            userPin: this.sessionStorageUser.userPin,
+            name: user.name,
+            category: user.category,
+            status: 1,
+            href: "menu.html",}
+        this.sessionStorage();
       } else {
         console.log("Pin Incorrecto");
       }
     },
-    logOut() {},
+    sessionStorage() {
+      sessionStorage.setItem(
+        "sessionStorageUser",
+        JSON.stringify(this.userLogin)
+      );
+    },
+    logOut() {
+      this.userLogin.splice(0,1)
+    },
   },
 });
