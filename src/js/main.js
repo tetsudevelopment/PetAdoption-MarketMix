@@ -238,7 +238,7 @@ let app = new Vue({
       this.localStorage();
     },
     deleteItem(index) {
-      this.dataPets.splice(index, 1);
+      this.dataPets.splice(index,1);
       this.localStorage();
     }
   },
