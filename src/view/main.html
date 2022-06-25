@@ -14,12 +14,22 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="assets/images/LogoPrimary.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>Tienda de adopcion</title>
 </head>
 
 <body>
   <div id="app">
     <div class="container row">
+      <div class="container">
+        <div class="row">
+          <div class="col-3" v-for="item in dataPet">
+            <img :src="item.img" alt="" style="width: 50px;">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" @click="agg">agregar</button>
+
       <div class="form-floating mb-3 col-6">
         <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="sessionStorageUser.userId" ref="userId">
         <label for="floatingInput">Email address</label>
@@ -30,6 +40,15 @@
       </div>
       <div class="col-6 text-center">
         <button type="button" class="btn btn-primary" @click="login">Login</button>
+        <a :href="dataHref.href2" class="btn btn-primary " @click="logOut">Cerrar sesion</a>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 " v-for="item in imgPets" >
+            <img :src="item" alt="" style="width: 100px; height: 100px;" @click="prueba(item)" class="btn">
+          </div>
+          <button class="btn btn-primary" @click="agregar">agregar</button>
+        </div>
       </div>
     </div>
 
@@ -49,8 +68,8 @@
     </div>
     <!-- /Admin -->
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../js/main.js"></script>
 </body>
 
