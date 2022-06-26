@@ -74,7 +74,7 @@ let app = new Vue({
       age: "",
       race: "",
       age: "",
-      description:'',
+      description: "",
     },
     imgPets: [
       "../assets/Animals/Sacha.jpg",
@@ -225,7 +225,7 @@ let app = new Vue({
     },
     toAdopt(index, item) {
       let date = new Date();
-      let fecha =`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+      let fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
       let toAdopt = {
         id: item.id,
         name: this.userLogin.name,
@@ -235,10 +235,10 @@ let app = new Vue({
         img: item.img,
         description: item.description,
         userName: this.userLogin.name,
-        date:fecha
-      }; 
+        date: fecha,
+      };
       let cambio = this.dataPet.splice(index, 1, toAdopt);
-      console.log(cambio, 'Cambio');
+      console.log(cambio, "Cambio");
       this.localStorage();
     },
     agg() {
@@ -254,8 +254,8 @@ let app = new Vue({
       this.localStorage();
     },
     deleteItem(index) {
-      this.dataPets.splice(index,1);
+      this.dataPets.splice(index, 1);
       this.localStorage();
-    }
+    },
   },
 });
