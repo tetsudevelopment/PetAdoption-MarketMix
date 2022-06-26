@@ -4,6 +4,7 @@
 }
 #header {
   background-color: rgb(44, 139, 87) !important;
+  height: 95px;
   color: #FFFFFF;
 }
 body{
@@ -16,14 +17,45 @@ body{
   border-radius: 5px;
   padding: 15px;
   width: 300px;
-  height: 350px;
+  height: 280px;
   text-align: center;
   font-family: 'Merriweather', serif
 }
-/* #menu img{
-  width: 300px;
-  height: 200px;
-
+/* modals */
+#mascota-modal img{
+  width: 320px;
 }
- */
+#modal-body-perro{
+  background-color: rgb(44, 139, 87) !important;
+}
+#modal-perro{
+  background-color: rgb(204, 217, 226) !important;
+}
+#adoptado{
+  filter: grayscale(80%);
+}
+/* /modals */
+#formulario{
+  background-color: rgb(44, 139, 87);
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  font-family: 'Merriweather', serif
+}
+#tablas{
+  background-color: rgb(44, 139, 87);
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+#foto-perro{
+  width: 50px;
+}
+
 
