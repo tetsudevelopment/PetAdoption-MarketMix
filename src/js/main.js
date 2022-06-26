@@ -100,6 +100,7 @@ let app = new Vue({
       } else {
         this.dataPet = this.dataPets;
       }
+      this.localStorage();
     },
     localStorage() {
       localStorage.setItem("dataLocal", JSON.stringify(this.dataPet));
@@ -222,8 +223,23 @@ let app = new Vue({
       this.sessionStorageUser.userPin = "";
       this.sessionStorage();
     },
-    toAdopt(index) {
-      this.dataPet[index].status = "Adoptado";
+    toAdopt(index, item) {
+      let date = new Date();
+      let fecha =`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+      let toAdopt = {
+        id: item.id,
+        name: this.userLogin.name,
+        race: item.race,
+        age: item.age,
+        status: "Adoptado",
+        img: item.img,
+        description: item.description,
+        userName: this.userLogin.name,
+        date:fecha
+      }; 
+      let cambio = this.dataPet.splice(index, 1, toAdopt);
+      console.log(cambio, 'Cambio');
+      this.localStorage();
     },
     agg() {
       this.dataPets.push({
