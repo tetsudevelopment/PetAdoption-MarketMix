@@ -4,78 +4,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-
-
-
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-    </script>
-
-
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-    </script>
-
-
-
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="icon" href="assets/images/LogoPrimary.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&display=swap"
     rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>Tienda de adopcion</title>
 </head>
-<!-- header -->
-
 <body>
   <div id="app">
     <nav id="header" class="navbar navbar-expand-lg bg-light mb-5 ">
       <div class="container-fluid">
-
-
-        <a class="navbar-brand" href="#">
-          <h4>Adoption Pets</h4>
-        </a>
+          <h4>Adoption Pets <span><img src="src/assets/images/logo.png" alt="" style="width: 40px;"></span></h4>
       </div>
     </nav>
+    <!-- /header -->
+    <!-- main -->
+    <section>
+      <div class="container">
+        <div row>
+          <form id="login">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="sessionStorageUser.userId">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" v-model="sessionStorageUser.userPin">
+            </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-primary" type="button" @click="login">Ingresar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- /main -->
   </div>
 
-  <!-- /header -->
-  <!-- main -->
-  <section>
-    <div class="container">
-      <div row>
-        <form id="login">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Usuario</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="d-grid gap-2 mt-4">
-            <button class="btn btn-primary" type="button">Ingresar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- /main -->
-
-
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="src/js/main.js"></script>
 </body>
 
 </html>

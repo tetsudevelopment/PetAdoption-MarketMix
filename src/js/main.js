@@ -1,8 +1,9 @@
 let app = new Vue({
   el: "#app",
   data: {
+    img:'',
     dataHref: {
-      href1: "../../src/view/main.html",
+      href1: "../../src/view/menu.html",
       href2: "../../index.html",
     },
     dataUser: [
@@ -31,7 +32,8 @@ let app = new Vue({
     userLogin: {},
     dataPets: [
       {
-        id: 1,
+        id: "001",
+        idModal: "#001",
         name: "Sacha",
         race: "Bulldog",
         age: "1 año",
@@ -40,7 +42,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: 2,
+        id: "002",
+        idModal: "#002",
         name: "Rex",
         race: "Labrador retriever",
         age: "3 meses",
@@ -49,7 +52,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: 3,
+        id: "003",
+        idModal: "#003",
         name: "Gema",
         race: "Pastor alemán",
         age: "2 años",
@@ -58,7 +62,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: 4,
+        id: "004",
+        idModal: "#005",
         name: "Niña",
         race: "Akita Inu",
         age: "2 años",
@@ -94,6 +99,9 @@ let app = new Vue({
   mounted() {},
   computed: {},
   methods: {
+    pruebaimg() {
+      
+    },
     local() {
       if (localStorage.getItem("dataLocal") !== null) {
         this.dataPet = JSON.parse(localStorage.getItem("dataLocal"));
@@ -168,6 +176,7 @@ let app = new Vue({
         Toast.fire({
           icon: icon,
           title: title,
+          text: text,
         });
       }
     },
@@ -183,17 +192,18 @@ let app = new Vue({
         this.alert(
           (icon = "error"),
           (title = "Espacios vacios"),
-          (text = '"Porfavor Llene los campos correspondientes"'),
-          (value = 0)
+          (text = ""),
+          (value = 1)
         );
       } else if (index == -1) {
         this.alert(
           (icon = "error"),
           (title = "Error de credenciales"),
           (text = "El usuario no existe en nuestra base de datos"),
-          (value = 0)
+          (value = 1)
         );
       } else if (user.userPin == this.sessionStorageUser.userPin) {
+        window.location.href = this.dataHref.href1;
         this.alert(
           (icon = "success"),
           (title = "Se inicio sesión correctamente"),
@@ -213,7 +223,7 @@ let app = new Vue({
           (icon = "error"),
           (title = "Pin Erroneo"),
           (text = "Su Pin no es Correcto"),
-          (value = 0)
+          (value = 1)
         );
       }
     },
@@ -228,7 +238,7 @@ let app = new Vue({
       let fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
       let toAdopt = {
         id: item.id,
-        name: this.userLogin.name,
+        name: item.name,
         race: item.race,
         age: item.age,
         status: "Adoptado",

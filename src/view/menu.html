@@ -16,111 +16,92 @@
     <link rel="icon" href="assets/images/LogoPrimary.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Tienda de adopcion</title>
 </head>
 <!-- header -->
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#header" data-bs-smooth-scroll="true" class="scrollspy-example">
     <div id="app">
-        <<<<<<< HEAD <nav id="header" class="navbar navbar-expand-lg bg-light mb-2 ">
+        <nav id="header" class="navbar navbar-expand-lg mb-5" >
             <div class="container-fluid">
-                <a id="letra" class="navbar-brand" href="#">Pet Adoption</a>
-                <span class="badge text-bg-danger">Salir</span>
+                <h4>Adoption Pets <span><img src="../../src/assets/images/logo.png" alt="" style="width: 40px;"></span></h4>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header">
+                        <h4>Adoption Pets <span><img src="../../src/assets/images/logo.png" alt="" style="width: 40px;"></span></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Administrador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Adopta un peludo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Dar en adopcion</a>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <a class="nav-link active btn btn-success col-5" aria-current="page" href="#">Cerrar sesion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </nav>
+        <!-- /header -->
+        <!-- menu -->
+        <section id="menu mt-3">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col text-center text-uppercase  ">
+                        <h4>Menu principal</h4>      
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-12 mb-4 offset-2">
+                    <div class="card col-10">
+                        <div class="card-body btn">
+                            <img src="../assets/images/mascota1.jpg" class="card-img-top " alt="foto mascota">
+                        </div>
+                        <div class="card-body">
+                            <div class="badges ">
+                            </div>
+                            <h5 class="card-title ">Adoptar</h5>
+                            <div class="d-grid gap-2 mt-4">
+                                <button class="btn btn-success" type="button">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 text-center offset-2 ">
+                    <div class="card col-10">
+                        <div class="card-body btn">
+                            <img src="../assets/images/perrosadopcion.jpeg" class="card-img-top " alt="foto mascota">
+                        </div>
+                        <div class="card-body">
+                            <div class="badges ">
+                            </div>
+                            <h5 class="card-title">Dar en adopcion</h5>
+                            <div class="d-grid gap-2 mt-4">
+                                <button class="btn btn-success" type="button">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /menu -->
     </div>
-    </nav>
-    =======
-    <nav id="header" class="navbar navbar-expand-lg bg-light mb-5 ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Adoption Pets</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Administrador</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Adopta un peludo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Dar en adopcion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Cerrar sesion</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    </div>
-    >>>>>>> diego
-    </div>
-    <!-- /header -->
-    <!-- menu -->
-    <section id="menu">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col text-center text-uppercase  ">
-                    <<<<<<< HEAD <h4>Menu principal</h4>
-                        =======
-                        <h5>Menu principal</h5>
-                        >>>>>>> diego
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center text-center">
-            <div class="col-12 mb-4 offset-2">
-                <div class="card col-10">
-                    <div class="card-body btn">
-                        <<<<<<< HEAD <img src="../assets/images/mascota1.jpg" class="card-img-top " alt="foto mascota">
-                            =======
-                            <img src="../assets/images/perro1.jpg" class="card-img-top " alt="foto mascota">
-                            >>>>>>> diego
-                    </div>
-                    <div class="card-body">
-                        <div class="badges ">
-                        </div>
-                        <h5 class="card-title ">Adoptar</h5>
-                        <div class="d-grid gap-2 mt-4">
-                            <button class="btn btn-success" type="button">Ingresar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 mb-4 text-center offset-2 ">
-                <div class="card col-10">
-                    <div class="card-body btn">
-                        <img src="../assets/images/perrosadopcion.jpeg" class="card-img-top " alt="foto mascota">
-                    </div>
-                    <div class="card-body">
-                        <div class="badges ">
-                        </div>
-                        <h5 class="card-title">Dar en adopcion</h5>
-                        <div class="d-grid gap-2 mt-4">
-                            <button class="btn btn-success" type="button">Ingresar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /menu -->
-
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/main.js"></script>
 </body>
 
