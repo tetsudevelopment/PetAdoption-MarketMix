@@ -2,10 +2,6 @@ let app = new Vue({
   el: "#app",
   data: {
     img:'',
-    dataHref: {
-      href1: "../../src/view/menu.html",
-      href2: "../../index.html",
-    },
     dataUser: [
       {
         userId: "1234",
@@ -32,8 +28,8 @@ let app = new Vue({
     userLogin: {},
     dataPets: [
       {
-        id: "001",
-        idModal: "#001",
+        id: "p01",
+        idModal: "#p01",
         name: "Sacha",
         race: "Bulldog",
         age: "1 año",
@@ -42,8 +38,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: "002",
-        idModal: "#002",
+        id: "p02",
+        idModal: "#p02",
         name: "Rex",
         race: "Labrador retriever",
         age: "3 meses",
@@ -52,8 +48,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: "003",
-        idModal: "#003",
+        id: "p03",
+        idModal: "#p03",
         name: "Gema",
         race: "Pastor alemán",
         age: "2 años",
@@ -62,8 +58,8 @@ let app = new Vue({
         description: "Hermosa y juguetona perrita",
       },
       {
-        id: "004",
-        idModal: "#005",
+        id: "p04",
+        idModal: "#p04",
         name: "Niña",
         race: "Akita Inu",
         age: "2 años",
@@ -181,13 +177,9 @@ let app = new Vue({
       }
     },
     login() {
-      let user = this.dataUser.find(
-        (element) => element.userId == this.sessionStorageUser.userId
-      );
+      let user = this.dataUser.find((element) => element.userId == this.sessionStorageUser.userId);
       let index = this.dataUser.indexOf(user);
-      if (
-        this.sessionStorageUser.userId == "" ||
-        this.sessionStorageUser.userPin == ""
+      if (this.sessionStorageUser.userId == "" ||this.sessionStorageUser.userPin == ""
       ) {
         this.alert(
           (icon = "error"),
@@ -203,7 +195,9 @@ let app = new Vue({
           (value = 1)
         );
       } else if (user.userPin == this.sessionStorageUser.userPin) {
-        window.location.href = this.dataHref.href1;
+        setTimeout(() => {
+          location.href= "../../src/view/menu.html";
+        }, 3000);
         this.alert(
           (icon = "success"),
           (title = "Se inicio sesión correctamente"),
@@ -231,6 +225,15 @@ let app = new Vue({
       this.userLogin = {};
       this.sessionStorageUser.userId = "";
       this.sessionStorageUser.userPin = "";
+      setTimeout(() => {
+        location.href='../../index.html'
+      }, 3000);
+      this.alert(
+        (icon = "success"),
+        (title = "Sesion cerrada correctamente"),
+        // (text = "El usuario no existe en nuestra base de datos"),
+        // (value = 1)
+      );
       this.sessionStorage();
     },
     toAdopt(index, item) {

@@ -27,7 +27,10 @@
     <div id="app">
         <nav id="header" class="navbar navbar-expand-lg mb-5">
             <div class="container-fluid">
-                <h4>Adoption Pets <span><img src="../../src/assets/images/logo.png" alt="" style="width: 40px;"></span></h4>
+                <a href="">
+                    <h4 class="btn">Adoption Pets<span><img src="../../src/assets/images/logo.png" alt=""
+                                style="width: 40px;"></span></h4>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -41,16 +44,17 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Administrador</a>
+                                <a class="nav-link active" aria-current="page" href="../view/menu.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Adopta un peludo</a>
+                                <a class="nav-link active" aria-current="page" href="../view/adoption.html">Adopta un peludo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Dar en adopcion</a>
+                                <a class="nav-link active" aria-current="page" href="../view/form.html">Dar en adopcion</a>
                             </li>
                             <li class="nav-item mt-2">
-                                <a class="nav-link active btn btn-success col-5" aria-current="page" href="#">Cerrar sesion</a>
+                                <a class="nav-link active btn btn-success col-5" aria-current="page" @click="logOut">Cerrar
+                                    sesion</a>
                             </li>
                         </ul>
                     </div>
@@ -64,7 +68,7 @@
             <div class="row justify-content-center text-center mt-4" v-for="(item,index) in dataPet">
                 <div class="col-12 mb-4 offset-2" v-if="item.status=='Adoptar'" >
                     <div class="card col-10">
-                        <div class="card-body btn" data-bs-toggle="modal" data-bs-target="#mascota">
+                        <div class="card-body btn" data-bs-toggle="modal" :data-bs-target="item.idModal">
                             <img :src="item.img" class="card-img-top " alt="foto mascota">
                         </div>
                         <div class="card-body">
@@ -96,29 +100,29 @@
         </section>
         <!-- /cards -->
         <!-- modal_adopcion -->
-        <section id="mascota-modal">
+        <section id="mascota-modal" v-for="item in dataPet">
             <div class="container">
-                <div class="modal fade" id="mascota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" :id="item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content" id="modal-perro">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Tony</h5>
+                                <h5 class="modal-title" id="exampleModalLabel" v-text="item.name"></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-center" id="modal-body-perro">
                                 <div class="modal-body-image">
-                                    <img src="../assets/images/perro1.jpg" alt="perro">
+                                    <img :src="item.img" alt="perro">
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 id="ingredients">Criollo:</h5>
+                                            <h5 id="ingredients" v-text="item.race"></h5>
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <p>Perrito criollo con tan solo dos años de edad, muy cariñoso.</p>
+                                                <p v-text="item.description"></p>
                                             </div>
                                             <!-- Botón Adoptar -->
                                             <div class="container">
